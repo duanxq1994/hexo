@@ -17,7 +17,7 @@ tags: [git]
 $ git init
 ~~~
 这个命令我甚至是第一次用到，还有很多命令，我也是基本没有使用过
-~~~
+~~~bash
 $ git clone ** dir
 $ git remote add origin **
 ~~~
