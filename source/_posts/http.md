@@ -1,7 +1,8 @@
 ---
 title: 使用 httpclient 发送post请求
 date: 2017-08-17 23:24:51
-tags:[http]
+tags: [http]
+categories: [http]
 ---
 
 ### 首先maven 依赖

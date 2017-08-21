@@ -2,6 +2,7 @@
 title: git 方面
 date: 2017-08-06 20:13:48
 tags: [git]
+categories: [git]
 ---
 ## 接触git
 刚开始接触git是在15年8月份，那时我刚毕业，第一份工作。
