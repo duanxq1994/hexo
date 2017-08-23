@@ -56,9 +56,10 @@ public class Test {
         builder.addPart(fieldName, new FileBody(file));//①
         builder.addPart(fieldName, new ByteArrayBody(FileCopyUtils.copyToByteArray(file), fileName));//②
         builder.addPart(fieldName, new InputStreamBody(new FileInputStream(file), fileName));//③
-        //②、③两种方式fileName是关键，没有fileName字段的话（④）接收不到文件
-        //builder.addPart(fieldName, new ByteArrayBody(new FileInputStream(file)));//④
-        //builder.addBinaryBody(fieldName, new FileInputStream(file));//⑤    等同于④
+        //②、③两种方式fileName是关键，④⑤这种是没有传fileName的
+        // 没有fileName字段的话 spring mvc multipartFile接收不到文件 可以request.getPart(fieldName).getInputStream()
+        builder.addBinaryBody(fieldName, FileCopyUtils.copyToByteArray(file));//④
+        builder.addBinaryBody(fieldName, new FileInputStream(file));//⑤
 
         httpPost.setEntity(builder.build());
         CloseableHttpResponse execute = client.execute(httpPost);
