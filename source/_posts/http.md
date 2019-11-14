@@ -5,7 +5,7 @@ tags: [http]
 categories: [http]
 ---
 
-### 首先maven 依赖
+### maven 依赖
 ~~~xml
 <dependency>
     <groupId>org.apache.httpcomponents</groupId>
@@ -53,13 +53,15 @@ public class Test {
         builder.addTextBody("key", "编码", ContentType.DEFAULT_TEXT.withCharset(StandardCharsets.UTF_8));// 没有后面这个编码，中文会乱码
         //下面是三种发送文件的方式 file、inputStream、byte[]
         //三种方式可以同时存在
-        builder.addPart(fieldName, new FileBody(file));//①
-        builder.addPart(fieldName, new ByteArrayBody(FileCopyUtils.copyToByteArray(file), fileName));//②
-        builder.addPart(fieldName, new InputStreamBody(new FileInputStream(file), fileName));//③
-        //②、③两种方式fileName是关键，④⑤这种是没有传fileName的
-        // 没有fileName字段的话 spring mvc multipartFile接收不到文件 可以request.getPart(fieldName).getInputStream()
-        builder.addBinaryBody(fieldName, FileCopyUtils.copyToByteArray(file));//④
-        builder.addBinaryBody(fieldName, new FileInputStream(file));//⑤
+        builder.addPart(fieldName, new FileBody(file));//1
+        builder.addPart(fieldName, new ByteArrayBody(FileCopyUtils.copyToByteArray(file), fileName));//2
+        builder.addPart(fieldName, new InputStreamBody(new FileInputStream(file), fileName));//3
+        // 2、3两种方式fileName是关键
+        // 4、5这种是没有传fileName的
+        // 没有fileName字段的话 spring mvc multipartFile接收不到文件
+        // 可以request.getPart(fieldName).getInputStream()
+        builder.addBinaryBody(fieldName, FileCopyUtils.copyToByteArray(file));//4
+        builder.addBinaryBody(fieldName, new FileInputStream(file));//5
 
         httpPost.setEntity(builder.build());
         CloseableHttpResponse execute = client.execute(httpPost);
@@ -70,7 +72,6 @@ public class Test {
     }
 
 }
-
 ~~~
 
 

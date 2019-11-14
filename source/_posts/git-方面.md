@@ -5,9 +5,9 @@ tags: [git]
 categories: [git]
 ---
 ## 接触git
-刚开始接触git是在15年8月份，那时我刚毕业，第一份工作。
-当时是同事建议使用[sourceTree](https://www.sourcetreeapp.com/)（git图形化工具），我觉得很好用，当然也确实很好用，功能很强大各种操作、状态都很直接很容易，便于操作。
-尤其是当你理解了git的操作流程以后，各种merge、cherry-pick、reset等等操作，简直不要太方便，graph也非常的直观。
+我刚开始接触git是在15年8月份，那时刚毕业，第一份工作。
+当时同事建议使用[sourceTree](https://www.sourcetreeapp.com/)（git图形化工具），很好用，功能很强大。各种操作、状态都很简单而且直观，便于操作。
+尤其是当你理解了git的操作流程以后，各种merge、cherry-pick、reset、rebase等等操作，使用起来很方便，graph也非常的直观。
 
 ## 进阶
 后面接触到了[IDEA](https://www.jetbrains.com/idea/)，它里面自带了版本控制，功能、实用性、外观都可以和sourceTree相媲美，因为idea基本每天都要使用，sourceTree也就不怎么打开了，后面使用就少了。
