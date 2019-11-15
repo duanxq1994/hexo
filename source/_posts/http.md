@@ -2,17 +2,8 @@
 title: 使用 httpclient 发送post请求
 date: 2017-08-17 23:24:51
 tags: [http]
-categories: [http]
+categories: [java]
 ---
-
-### maven 依赖
-~~~xml
-<dependency>
-    <groupId>org.apache.httpcomponents</groupId>
-    <artifactId>httpmime</artifactId>
-    <version>4.3.6</version>
-</dependency>
-~~~
 
 ### 代码 
 ~~~java
@@ -73,5 +64,12 @@ public class Test {
 
 }
 ~~~
-
+### maven 依赖
+~~~xml
+<dependency>
+    <groupId>org.apache.httpcomponents</groupId>
+    <artifactId>httpmime</artifactId>
+    <version>4.3.6</version>
+</dependency>
+~~~
 
